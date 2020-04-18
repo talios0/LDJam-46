@@ -23,9 +23,11 @@ public class CameraController : MonoBehaviour
         startTime = Time.time;
         journeyLength = Vector3.Distance(startPos, endPos);
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        Vector3 lastPosition = myCamera.transform.position;
         Vector3 currentPosition = myCamera.transform.position;
+           
     }
     public void panDown()
     {

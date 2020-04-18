@@ -34,7 +34,7 @@ public class playerScript: MonoBehaviour
         {//This event should increment the score and move onto the next cube
             Debug.Log("Collision with a win platform detected");
             
-           // a.panDown();
+            a.panDown();
         }
        
     }

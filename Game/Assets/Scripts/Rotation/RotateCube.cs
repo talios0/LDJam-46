@@ -23,6 +23,7 @@ public class RotateCube : MonoBehaviour
 
     private void Update()
     {
+        if (LevelManager.disableRotation) return;
         if (!active) return;
         if (Input.GetMouseButtonDown(0) && (clickState == MouseState.NONE || clickState == MouseState.WAIT)) { clickState = MouseState.CLICK; }
         else if (clickState == MouseState.CLICK && Input.GetMouseButton(0)) { clickState = MouseState.DRAG; }
