@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class LevelManager : MonoBehaviour
     private bool first = true;
 
 
+    private Canvas LossCanvas; //The Losing Canvas
     public GameObject[] levels;
 
     public int level;
@@ -40,6 +43,8 @@ public class LevelManager : MonoBehaviour
     public GameObject sphere;
     private void Start()
     {
+        LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
+        LossCanvas.GetComponent<Canvas>().enabled = false;
         LevelCompleteStart();
         levelUI.text = level.ToString();
     }
@@ -182,5 +187,24 @@ public class LevelManager : MonoBehaviour
         sphere.GetComponent<Rigidbody>().detectCollisions = true;
         dropButtonAnimator.Play("FadeOut");
         dropButton.GetComponent<Button>().interactable = false;
+    }
+
+    public void loadLevel(string levelName) {
+        try
+        {
+            SceneManager.LoadScene(levelName, LoadSceneMode.Single);
+            Debug.Log("Load Scene " + levelName);
+        }
+        catch {
+            Debug.Log("Level Load Not Valid");
+        }
+    }
+    public void quitGame() {
+        Debug.Log("Quitting Game");
+        Application.Quit();
+    }
+    public void GameLoss()
+    {
+        LossCanvas.enabled = true;
     }
 }
