@@ -26,6 +26,9 @@ public class LevelManager : MonoBehaviour
     public GameObject resumeButton;
     public GameObject restartButton;
 
+
+    private bool paused = false;
+    private bool pausePossible = true;
     private void Start()
     {
         LevelCompleteStart();
@@ -45,6 +48,19 @@ public class LevelManager : MonoBehaviour
             {
                 PanCamera();
             }
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetAxisRaw("Pause") != 0)
+        {
+            if (!pausePossible) return;
+            pausePossible = false;
+            if (!paused) Pause();
+            else Resume();
+        }
+        else {
+            pausePossible = true;
         }
     }
 
@@ -102,18 +118,17 @@ public class LevelManager : MonoBehaviour
     }
 
     public void Restart() {
-        pauseUIAnimator.Play("FadeOut");
-        restartButton.SetActive(false);
-        resumeButton.SetActive(false);
-        disableRotation = false;
         LoadNextLevel();
         UnloadLastLevel();
         ResetPositions();
+        Resume();
     }
 
     public void Pause()
     {
+        paused = true;
         pauseUIAnimator.Play("FadeIn");
+        levelUIAnimator.Play("FadeIn");
         restartButton.SetActive(true);
         resumeButton.SetActive(true);
         disableRotation = true;
@@ -121,7 +136,9 @@ public class LevelManager : MonoBehaviour
 
     public void Resume()
     {
+        paused = false;
         pauseUIAnimator.Play("FadeOut");
+        levelUIAnimator.Play("NewLevel");
         restartButton.SetActive(false);
         resumeButton.SetActive(false);
         disableRotation = false;
