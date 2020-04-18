@@ -11,14 +11,14 @@ public class LevelManager : MonoBehaviour
 
     public Transform newLevelLocation;
     public GameObject currentLevel;
-    public GameObject newLevel;
+    private GameObject newLevel;
 
     private bool levelComplete;
-    private bool panComplete;
+    public bool panComplete;
 
     private void Start()
     {
-
+        LevelCompleteStart();
     }
 
     private void FixedUpdate()
@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelCompleteEnd()
     {
-        if (!panComplete) return;
+        levelComplete = false;
         // Unload Previous
         UnloadLastLevel();
         // Set position back to origin
