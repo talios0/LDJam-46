@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WallFade : MonoBehaviour
@@ -13,7 +14,6 @@ public class WallFade : MonoBehaviour
 
     private List<int> fadeInWalls;
     private List<int> fadedIn;
-
     private void Start()
     {
         fadeOutWalls = new List<int>();
@@ -24,7 +24,6 @@ public class WallFade : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(transform.eulerAngles.y);
         if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
         {
             if (!fadeOutWalls.Contains(5))
