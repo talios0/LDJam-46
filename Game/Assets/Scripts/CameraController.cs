@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Vector3 position;
     [SerializeField] float panSpeed;
+    public Vector3 startPos;
+    public Vector3 endPos;
 
+    public float speed = 1.0f;
     public GameObject myCamera;
+    private float startTime;
+    private float journeyLength;
+    public float camSpeed;
+    bool isMoving = true;
     // Start is called before the first frame update
     void Start()
     {
-        position = new Vector3(0.0f, 0.0f, -10.0f);
-        myCamera.transform.position = position;
+        // myCamera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+        startPos = myCamera.transform.position;
+        endPos = new Vector3(0.0f, -20.0f, 14.0f);
+        startTime = Time.time;
+        journeyLength = Vector3.Distance(startPos, endPos);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        Vector3 currentPosition = myCamera.transform.position;
+    }
+    public void panDown()
+    {
+        
+        while (isMoving)
         {
-            panDown();
+            float distCovered = (Time.time - startTime) * speed;
+
+            float fractionOfJOurney = distCovered / journeyLength;
+
+            myCamera.transform.position = Vector3.Lerp(startPos, endPos, fractionOfJOurney);
         }
     }
-    void panDown()
-    {
-        myCamera.transform.position += new Vector3(0.0f, -20.0f, 0.0f);
-    }
 }
-

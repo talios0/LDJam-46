@@ -23,8 +23,7 @@ public class WallFade : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        Debug.Log(transform.eulerAngles.y);
+    { 
         if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
         {
             if (!fadeOutWalls.Contains(5))
