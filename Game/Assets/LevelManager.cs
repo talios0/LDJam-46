@@ -72,8 +72,6 @@ public class LevelManager : MonoBehaviour
         UnloadLastLevel();
         // Set position back to origin
         ResetPositions();
-        // Pause
-        Pause();
     }
 
     private void LoadNextLevel()
@@ -103,8 +101,14 @@ public class LevelManager : MonoBehaviour
         levelUI.text = level.ToString();
     }
 
-    public void Restart() { 
-        
+    public void Restart() {
+        pauseUIAnimator.Play("FadeOut");
+        restartButton.SetActive(false);
+        resumeButton.SetActive(false);
+        disableRotation = false;
+        LoadNextLevel();
+        UnloadLastLevel();
+        ResetPositions();
     }
 
     public void Pause()
