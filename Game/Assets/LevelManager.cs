@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
+using System;
+using System.Runtime.InteropServices;
 
 public class LevelManager : MonoBehaviour
 {
     public static bool disableRotation = false;
 
-
+    private Canvas LossCanvas; //The Losing Canvas
     public GameObject[] levels;
 
     public int level;
@@ -31,6 +34,8 @@ public class LevelManager : MonoBehaviour
     private bool pausePossible = true;
     private void Start()
     {
+        LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
+        LossCanvas.GetComponent<Canvas>().enabled = false;
         LevelCompleteStart();
         levelUI.text = level.ToString();
     }
@@ -147,5 +152,23 @@ public class LevelManager : MonoBehaviour
     private void GameFinished()
     {
         // Load new Screen
+    }
+    public void loadLevel(string levelName) {
+        try
+        {
+            SceneManager.LoadScene(levelName, LoadSceneMode.Single);
+            Debug.Log("Load Scene " + levelName);
+        }
+        catch {
+            Debug.Log("Level Load Not Valid");
+        }
+    }
+    public void quitGame() {
+        Debug.Log("Quitting Game");
+        Application.Quit();
+    }
+    public void GameLoss()
+    {
+        LossCanvas.enabled = true;
     }
 }
