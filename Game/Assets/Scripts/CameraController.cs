@@ -31,14 +31,14 @@ public class CameraController : MonoBehaviour
     }
     public void panDown()
     {
-        
-        while (isMoving)
-        {
-            float distCovered = (Time.time - startTime) * speed;
 
-            float fractionOfJOurney = distCovered / journeyLength;
 
-            myCamera.transform.position = Vector3.Lerp(startPos, endPos, fractionOfJOurney);
-        }
+
+        float distCovered = (Time.time - startTime) * speed;
+
+        float fractionOfJOurney = distCovered / journeyLength;
+
+        myCamera.transform.position = Vector3.Lerp(startPos, endPos, fractionOfJOurney);
     }
+        
 }
