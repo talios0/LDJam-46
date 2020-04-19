@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] float panSpeed;
+    public Vector3 startPos;
+    public Vector3 endPos;
+
+    public float speed = 1.0f;
     public GameObject myCamera;
-
-    public Transform endLocation;
-    public float interpTime;
-    private Vector3 endPos;
-
-    public void StartPanDown() 
+    private float startTime;
+    private float journeyLength;
+    public float camSpeed;
+    bool isMoving = true;
+    // Start is called before the first frame update
+    void Start()
     {
-        endPos = new Vector3(0, endLocation.position.y, myCamera.transform.position.z);
+        // myCamera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+        startPos = myCamera.transform.position;
+        endPos = new Vector3(0.0f, -20.0f, 14.0f);
+        startTime = Time.time;
+        journeyLength = Vector3.Distance(startPos, endPos);
     }
 
     public bool PanDown()
