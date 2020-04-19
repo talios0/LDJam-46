@@ -166,6 +166,7 @@ public class LevelManager : MonoBehaviour
         ResetPositions();
         dropButtonAnimator.Play("FadeIn");
         dropButtonAnimator.GetComponent<Button>().enabled = true;
+        dropButtonAnimator.GetComponent<Button>().interactable = true;
         Resume();
     }
 
@@ -189,6 +190,7 @@ public class LevelManager : MonoBehaviour
         restartButton.SetActive(false);
         resumeButton.SetActive(false);
         disableRotation = false;
+        dropButton.GetComponent<Button>().enabled = true;
     }
 
     private void GameFinished()

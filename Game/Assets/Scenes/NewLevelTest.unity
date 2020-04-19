@@ -288,7 +288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165820673 stripped
 GameObject:
@@ -301,12 +301,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 165820678, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc,
     type: 3}
   m_PrefabInstance: {fileID: 576743249121722193}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &360737979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 360737979, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-    type: 3}
-  m_PrefabInstance: {fileID: 7720859409282159616}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &433350573 stripped
 MonoBehaviour:
@@ -396,7 +390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &705085598 stripped
 MonoBehaviour:
@@ -612,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 576743247470933992, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 576743247470933992, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc,
         type: 3}
@@ -775,12 +769,12 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverButtons.Array.data[1]
       value: 
-      objectReference: {fileID: 1473721091}
+      objectReference: {fileID: 0}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: gameOverButtons.Array.data[2]
       value: 
-      objectReference: {fileID: 329488744}
+      objectReference: {fileID: 0}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: currentLevel
@@ -875,10 +869,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6770603745691240549, guid: 246b41e1706beef48857b1019322f6bf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240551, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
       propertyPath: m_Name
       value: GameOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770603745691240570, guid: 246b41e1706beef48857b1019322f6bf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240571, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
@@ -918,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 6770603745691240571, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240571, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
