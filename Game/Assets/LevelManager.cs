@@ -186,6 +186,7 @@ public class LevelManager : MonoBehaviour
         restartButton.SetActive(false);
         resumeButton.SetActive(false);
         disableRotation = false;
+        dropButton.GetComponent<Button>().enabled = true ;
     }
 
     private void GameFinished()
