@@ -20,7 +20,6 @@ public class LevelManager : MonoBehaviour
 
     public int level;
 
-    public GameObject[] Lasers;
     public Transform newLevelLocation;
     public GameObject currentLevel;
     private GameObject newLevel;
@@ -47,10 +46,6 @@ public class LevelManager : MonoBehaviour
     public GameObject sphere;
     private void Start()
     {
-        for(int i = 0; i<Lasers.Length;i++) {
-            Lasers[i] = new GameObject();
-        }
-   
         LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         LossCanvas.GetComponent<Canvas>().enabled = false;
         LevelCompleteStart();
