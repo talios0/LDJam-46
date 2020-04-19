@@ -6,6 +6,7 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Net;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class LevelManager : MonoBehaviour
     private bool first = true;
 
 
-    private Canvas LossCanvas; //The Losing Canvas
+    public Canvas LossCanvas; //The Losing Canvas
     public GameObject[] levels;
 
     public int level;
@@ -38,6 +39,8 @@ public class LevelManager : MonoBehaviour
 
     private bool paused = false;
     private bool pausePossible = true;
+
+    public GameObject[] gameOverButtons;
 
 
     public GameObject sphere;
@@ -73,7 +76,8 @@ public class LevelManager : MonoBehaviour
             if (!paused) Pause();
             else Resume();
         }
-        else {
+        else
+        {
             pausePossible = true;
         }
     }
@@ -83,7 +87,8 @@ public class LevelManager : MonoBehaviour
         levelComplete = true;
         panComplete = false;
         // Check if at end
-        if (first) {
+        if (first)
+        {
             LoadNextLevel();
             UpdateLevelUI();
             levelUIAnimator.Play("NewLevel");
@@ -104,7 +109,6 @@ public class LevelManager : MonoBehaviour
 
     public void LevelCompleteEnd()
     {
-        sphere = newLevel.GetComponentInChildren<SphereCollider>().gameObject;
         levelComplete = false;
         // Unload Previous
         UnloadLastLevel();
@@ -116,6 +120,7 @@ public class LevelManager : MonoBehaviour
     private void LoadNextLevel()
     {
         newLevel = Instantiate(levels[level], newLevelLocation.position, Quaternion.identity);
+        sphere = newLevel.GetComponentInChildren<SphereCollider>().gameObject;
         sphere.GetComponent<Rigidbody>().isKinematic = true;
         sphere.GetComponent<Rigidbody>().detectCollisions = false;
     }
@@ -138,35 +143,46 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void UpdateLevelUI() {
+    public void UpdateLevelUI()
+    {
         levelUI.text = level.ToString();
     }
 
-    public void Restart() {
+    public void Restart()
+    {
+        if (LossCanvas.enabled)
+        {
+            LossCanvas.GetComponent<Animator>().Play("FadeOut");
+            foreach (GameObject g in gameOverButtons)
+            {
+                g.GetComponent<Button>().enabled = false;
+            }
+        }
         LoadNextLevel();
         UnloadLastLevel();
         ResetPositions();
         dropButtonAnimator.Play("FadeIn");
-        dropButtonAnimator.GetComponent<Button>().interactable = true;
+        dropButtonAnimator.GetComponent<Button>().enabled = true;
         Resume();
     }
 
     public void Pause()
     {
+        if (LossCanvas.enabled) return;
         paused = true;
         pauseUIAnimator.Play("FadeIn");
         levelUIAnimator.Play("FadeIn");
         restartButton.SetActive(true);
         resumeButton.SetActive(true);
         disableRotation = true;
-        dropButton.GetComponent<Button>().interactable = false;
+        dropButton.GetComponent<Button>().enabled = false;
     }
 
     public void Resume()
     {
         paused = false;
         pauseUIAnimator.Play("FadeOut");
-        levelUIAnimator.Play("NewLevel");
+        levelUIAnimator.Play("FadeOut");
         restartButton.SetActive(false);
         resumeButton.SetActive(false);
         disableRotation = false;
@@ -177,34 +193,60 @@ public class LevelManager : MonoBehaviour
         // Load new Screen
     }
 
-    private void ShowDropButton() {
+    public void StartOver()
+    {
+        if (LossCanvas.enabled)
+        {
+            LossCanvas.GetComponent<Animator>().Play("FadeOut");
+            foreach (GameObject g in gameOverButtons)
+            {
+                g.GetComponent<Button>().interactable = false;
+            }
+        }
+
+        level = -1;
+        LevelCompleteStart();
+    }
+
+    private void ShowDropButton()
+    {
         dropButton.GetComponent<Button>().interactable = true;
         dropButtonAnimator.Play("FadeIn");
     }
 
-    public void Drop() {
+    public void Drop()
+    {
         sphere.GetComponent<Rigidbody>().isKinematic = false;
         sphere.GetComponent<Rigidbody>().detectCollisions = true;
         dropButtonAnimator.Play("FadeOut");
         dropButton.GetComponent<Button>().interactable = false;
     }
 
-    public void loadLevel(string levelName) {
+    public void loadLevel(string levelName)
+    {
         try
         {
             SceneManager.LoadScene(levelName, LoadSceneMode.Single);
             Debug.Log("Load Scene " + levelName);
         }
-        catch {
+        catch
+        {
             Debug.Log("Level Load Not Valid");
         }
     }
-    public void quitGame() {
+
+    public void quitGame()
+    {
         Debug.Log("Quitting Game");
         Application.Quit();
     }
     public void GameLoss()
     {
         LossCanvas.enabled = true;
+        LossCanvas.GetComponent<Animator>().Play("FadeIn");
+        foreach (GameObject g in gameOverButtons)
+        {
+            g.GetComponent<Button>().interactable = true;
+        }
     }
 }
