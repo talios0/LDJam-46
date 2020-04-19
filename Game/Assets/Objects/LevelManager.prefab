@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4047909180362375239}
   - component: {fileID: 4047909180362375236}
   - component: {fileID: 525701207}
+  - component: {fileID: 1542353164}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -48,9 +49,8 @@ MonoBehaviour:
   LossCanvas: {fileID: 0}
   levels:
   - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
-  - {fileID: 2082038357731006761, guid: 6b906920ffd5c4147b53b187fa4ddae4, type: 3}
+  - {fileID: 945227634632944941, guid: 883c7d757cd36154b975467a4585a16a, type: 3}
   level: 0
-  Lasers: []
   newLevelLocation: {fileID: 0}
   currentLevel: {fileID: 0}
   panComplete: 0
@@ -81,3 +81,37 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   endLocation: {fileID: 0}
   interpTime: 0.15
+--- !u!114 &1542353164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047909180362375238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91539cb0b4934624da7115a312b62abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialAnimator: {fileID: 0}
+  prefaceText: {fileID: 0}
+  contentText: {fileID: 0}
+  tutorials:
+  - preface: 'OBJECTIVE:'
+    content: Reach the bottom without touching any of the lasers
+    level: 0
+  - preface: Nice!
+    content: Use the mouse to rotate the cube.
+    level: 1
+  - preface: Unlocked!
+    content: Use the SHIFT key to slow the sphere down.
+    level: 5
+  - preface: Did you know?
+    content: You can rotate the cube while the sphere is falling.
+    level: 10
+  - preface: That was easy!
+    content: Now the exit is smaller...
+    level: 15
+  - preface: 'TIP: '
+    content: Made a mistake? Pause and click restart!
+    level: 20

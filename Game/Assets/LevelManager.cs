@@ -43,14 +43,18 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] gameOverButtons;
 
+    private TutorialManager tutorials;
+
 
     public GameObject sphere;
     private void Start()
     {
+        tutorials = GetComponent<TutorialManager>();
         LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         LossCanvas.GetComponent<Canvas>().enabled = false;
         LevelCompleteStart();
         levelUI.text = level.ToString();
+        tutorials = GetComponent<TutorialManager>();
     }
 
     private void FixedUpdate()
@@ -117,6 +121,8 @@ public class LevelManager : MonoBehaviour
         UnloadLastLevel();
         // Set position back to origin
         ResetPositions();
+
+        tutorials.ShowTutorial(level);
         ShowDropButton();
     }
 
