@@ -16,7 +16,7 @@ public class playerScript: MonoBehaviour
       
         b = levelManageAccess.GetComponent<LevelManager>();
         playerLevel = 0;
-        transform.position = new Vector3(-0.225f, -4.16f, -11.41f);
+        transform.position = new Vector3(-6.16f, -6.43f, 5.51f);
         // transform.position = new Vector3(-6.57f, 6.54f, -15.34f);
     }
 
