@@ -8,12 +8,12 @@ public class playerScript: MonoBehaviour
 {
     public GameObject levelManageAccess; 
     int playerLevel;
-    public GameObject cameraScriptAccess;
+    
     CameraController a;
     LevelManager b;
     void Start()
     {
-        a = cameraScriptAccess.GetComponent<CameraController>();
+      
         b = levelManageAccess.GetComponent<LevelManager>();
         playerLevel = 0;
         transform.position = new Vector3(-0.225f, -4.16f, -11.41f);
