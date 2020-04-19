@@ -645,11 +645,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
-      propertyPath: levels.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
       propertyPath: newLevelLocation
       value: 
       objectReference: {fileID: 124357716}
@@ -698,30 +693,6 @@ PrefabInstance:
       propertyPath: dropButton
       value: 
       objectReference: {fileID: 165820673}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[0]
-      value: 
-      objectReference: {fileID: 7332256330272075393, guid: d2e28b345a20cbc478f830d33d5063de,
-        type: 3}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[1]
-      value: 
-      objectReference: {fileID: 6460532273684374638, guid: 4a7ac221c6627764983b39a060952a60,
-        type: 3}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[2]
-      value: 
-      objectReference: {fileID: 8967909541104496169, guid: ef4cd6127eb1d1f42bfb2876e2e2624a,
-        type: 3}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[3]
-      value: 
-      objectReference: {fileID: 4033242486462920690, guid: 3149a6d0e8089784f8f839c405e7e94c,
-        type: 3}
     - target: {fileID: 4047909180362375238, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: m_Name

@@ -46,8 +46,6 @@ public class LevelManager : MonoBehaviour
     public GameObject sphere;
     private void Start()
     {
-        
-   
         LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         LossCanvas.GetComponent<Canvas>().enabled = false;
         LevelCompleteStart();
