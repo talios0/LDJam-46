@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4047909180362375239}
   - component: {fileID: 4047909180362375236}
+  - component: {fileID: 525701207}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -43,12 +44,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f75bb8a36a62be49a839769d9d3e17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camController: {fileID: 525701207}
+  LossCanvas: {fileID: 0}
   levels:
   - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
-  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 2082038357731006761, guid: 6b906920ffd5c4147b53b187fa4ddae4, type: 3}
   level: 0
+  Lasers: []
   newLevelLocation: {fileID: 0}
   currentLevel: {fileID: 0}
   panComplete: 0
   levelUI: {fileID: 0}
   levelUIAnimator: {fileID: 0}
+  pauseUIAnimator: {fileID: 0}
+  resumeButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  dropButton: {fileID: 0}
+  dropButtonAnimator: {fileID: 0}
+  gameOverButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sphere: {fileID: 0}
+--- !u!114 &525701207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047909180362375238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072548784a7e11c4fa012dc2b940d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCamera: {fileID: 0}
+  endLocation: {fileID: 0}
+  interpTime: 0.15

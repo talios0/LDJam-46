@@ -10,6 +10,7 @@ using System.Net;
 
 public class LevelManager : MonoBehaviour
 {
+    public CameraController camController;
     public static bool disableRotation = false;
 
     private bool first = true;
@@ -59,6 +60,7 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Input.GetMouseButtonDown(1)) LevelCompleteStart();
         if (levelComplete)
         {
             if (panComplete)
@@ -110,6 +112,7 @@ public class LevelManager : MonoBehaviour
         }
         // Load Next Level
         LoadNextLevel();
+        camController.StartPanDown();
     }
 
     public void LevelCompleteEnd()
@@ -145,7 +148,7 @@ public class LevelManager : MonoBehaviour
 
     private void PanCamera()
     {
-
+        panComplete = camController.PanDown();
     }
 
     public void UpdateLevelUI()
