@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
-using System.Runtime.InteropServices;
 
 public class LevelManager : MonoBehaviour
 {
     public static bool disableRotation = false;
+
+    private bool first = true;
+
 
     private Canvas LossCanvas; //The Losing Canvas
     public GameObject[] levels;
@@ -29,9 +32,15 @@ public class LevelManager : MonoBehaviour
     public GameObject resumeButton;
     public GameObject restartButton;
 
+    public GameObject dropButton;
+    public Animator dropButtonAnimator;
+
 
     private bool paused = false;
     private bool pausePossible = true;
+
+
+    public GameObject sphere;
     private void Start()
     {
         LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
@@ -71,10 +80,17 @@ public class LevelManager : MonoBehaviour
 
     public void LevelCompleteStart()
     {
-        disableRotation = true;
         levelComplete = true;
         panComplete = false;
         // Check if at end
+        if (first) {
+            LoadNextLevel();
+            UpdateLevelUI();
+            levelUIAnimator.Play("NewLevel");
+            LevelCompleteEnd();
+            first = false;
+            return;
+        }
         level++;
         UpdateLevelUI();
         levelUIAnimator.Play("NewLevel");
@@ -88,16 +104,20 @@ public class LevelManager : MonoBehaviour
 
     public void LevelCompleteEnd()
     {
+        sphere = newLevel.GetComponentInChildren<SphereCollider>().gameObject;
         levelComplete = false;
         // Unload Previous
         UnloadLastLevel();
         // Set position back to origin
         ResetPositions();
+        ShowDropButton();
     }
 
     private void LoadNextLevel()
     {
         newLevel = Instantiate(levels[level], newLevelLocation.position, Quaternion.identity);
+        sphere.GetComponent<Rigidbody>().isKinematic = true;
+        sphere.GetComponent<Rigidbody>().detectCollisions = false;
     }
 
     private void ResetPositions()
@@ -126,6 +146,8 @@ public class LevelManager : MonoBehaviour
         LoadNextLevel();
         UnloadLastLevel();
         ResetPositions();
+        dropButtonAnimator.Play("FadeIn");
+        dropButtonAnimator.GetComponent<Button>().interactable = true;
         Resume();
     }
 
@@ -137,6 +159,7 @@ public class LevelManager : MonoBehaviour
         restartButton.SetActive(true);
         resumeButton.SetActive(true);
         disableRotation = true;
+        dropButton.GetComponent<Button>().interactable = false;
     }
 
     public void Resume()
@@ -153,6 +176,19 @@ public class LevelManager : MonoBehaviour
     {
         // Load new Screen
     }
+
+    private void ShowDropButton() {
+        dropButton.GetComponent<Button>().interactable = true;
+        dropButtonAnimator.Play("FadeIn");
+    }
+
+    public void Drop() {
+        sphere.GetComponent<Rigidbody>().isKinematic = false;
+        sphere.GetComponent<Rigidbody>().detectCollisions = true;
+        dropButtonAnimator.Play("FadeOut");
+        dropButton.GetComponent<Button>().interactable = false;
+    }
+
     public void loadLevel(string levelName) {
         try
         {
