@@ -169,6 +169,6 @@ public class LevelManager : MonoBehaviour
     }
     public void GameLoss()
     {
-        LossCanvas.enabled = true;
+        LossCanvas.GetComponent<Canvas>().enabled = false;
     }
 }
