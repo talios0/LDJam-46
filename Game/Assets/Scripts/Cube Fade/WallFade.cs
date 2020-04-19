@@ -30,69 +30,33 @@ public class WallFade : MonoBehaviour
     {
         if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
         {
-            if (!fadeOutWalls.Contains(5))
-            {
-                fadeOutWalls.Add(5);
-                Material material = walls[5].material;
-                material.SetFloat("_Surface", 1);
-                material.SetInt("_SrcBlend", 5);
-                material.SetInt("_DstBlend", 10);
-                material.SetInt("_ZWrite", 0);
-                walls[5].material = material;
-            }
+            FadeOut(5);
         }
-        else if (!fadeInWalls.Contains(5)) { fadeOutWalls.Remove(5); fadedOut.Remove(5); fadeInWalls.Add(5); }
+        else FadeIn(5);
 
-        if ((transform.eulerAngles.y < 330 && transform.eulerAngles.y > 200))
+        if (transform.eulerAngles.y < 330 && transform.eulerAngles.y > 200)
         {
-            if (!fadeOutWalls.Contains(2))
-            {
-                fadeOutWalls.Add(2);
-                Material material = walls[2].material;
-                material.SetFloat("_Surface", 1);
-                material.SetInt("_SrcBlend", 5);
-                material.SetInt("_DstBlend", 10);
-                material.SetInt("_ZWrite", 0);
-                walls[2].material = material;
-            }
+            FadeOut(2);
         }
-        else if (!fadeInWalls.Contains(2)) { fadeOutWalls.Remove(2); fadedOut.Remove(2); fadeInWalls.Add(2); }
+        else FadeIn(2);
 
-        if ((transform.eulerAngles.y < 250 && transform.eulerAngles.y > 115))
+        if (transform.eulerAngles.y < 250 && transform.eulerAngles.y > 115)
         {
-            if (!fadeOutWalls.Contains(0))
-            {
-                fadeOutWalls.Add(0);
-                Material material = walls[0].material;
-                material.SetFloat("_Surface", 1);
-                material.SetInt("_SrcBlend", 5);
-                material.SetInt("_DstBlend", 10);
-                material.SetInt("_ZWrite", 0);
-                walls[0].material = material;
-            }
+            FadeOut(0);
         }
-        else if (!fadeInWalls.Contains(0)) { fadeOutWalls.Remove(0); fadedOut.Remove(0); fadeInWalls.Add(0); }
+        else FadeIn(0);
 
         if ((transform.eulerAngles.y < 152 && transform.eulerAngles.y > 25))
         {
-            if (!fadeOutWalls.Contains(1))
-            {
-                fadeOutWalls.Add(1);
-                Material material = walls[1].material;
-                material.SetFloat("_Surface", 1);
-                material.SetInt("_SrcBlend", 5);
-                material.SetInt("_DstBlend", 10);
-                material.SetInt("_ZWrite", 0);
-                walls[1].material = material;
-            }
+            FadeOut(1);
         }
-        else if (!fadeInWalls.Contains(1)) { fadeOutWalls.Remove(1); fadedOut.Remove(1); fadeInWalls.Add(1); }
+        else FadeIn(1);
 
-        FadeOut();
-        FadeIn();
     }
-    private void FadeOut()
+    private void FadeOut(int index)
     {
+        walls[index].GetComponent<MeshRenderer>().enabled = false;
+        /*
         foreach (int i in fadeOutWalls)
         {
             walls[i].material.SetColor("_BaseColor", new Color(walls[i].material.GetColor("_BaseColor").r, walls[i].material.GetColor("_BaseColor").g, walls[i].material.GetColor("_BaseColor").b, Mathf.Lerp(walls[i].material.GetColor("_BaseColor").a, 0, interpTime)));
@@ -105,10 +69,13 @@ public class WallFade : MonoBehaviour
         }
 
         fadedOut.Clear();
+        */
     }
 
-    private void FadeIn()
+    private void FadeIn(int index)
     {
+        walls[index].GetComponent<MeshRenderer>().enabled = true;
+        /*
         foreach (int i in fadeInWalls)
         {
             walls[i].material.SetColor("_BaseColor", new Color(walls[i].material.GetColor("_BaseColor").r, walls[i].material.GetColor("_BaseColor").g, walls[i].material.GetColor("_BaseColor").b, walls[i].material.GetColor("_BaseColor").a + 255 / 5));
@@ -132,5 +99,6 @@ public class WallFade : MonoBehaviour
         }
 
         fadedIn.Clear();
+        */
     }
 }
