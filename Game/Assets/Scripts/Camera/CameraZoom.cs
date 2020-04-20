@@ -24,11 +24,7 @@ public class CameraZoom : MonoBehaviour
             zoomTo.z = Mathf.Clamp(zoomTo.z, minZoom, maxZoom);
         }
         if (zoomTo.z == 0) return;
-        transform.position = Vector3.Lerp(transform.position, zoomTo, interpTime);
-        if (Mathf.Abs(transform.position.z - zoomTo.z) < snapAmount) {
-            transform.position = zoomTo;
-            zoomTo.z = 0;
-        }
+        transform.position = zoomTo;
     }
 
     public bool GetZoomDisable() {
