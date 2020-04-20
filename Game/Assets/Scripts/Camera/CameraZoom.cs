@@ -18,7 +18,6 @@ public class CameraZoom : MonoBehaviour
 
     private void Update()
     {
-        if (LevelManager.disableRotation) return;
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             zoomTo = new Vector3(transform.position.x, transform.position.y, transform.position.z + Input.GetAxis("Mouse ScrollWheel") * -sensitivity * Time.deltaTime);
