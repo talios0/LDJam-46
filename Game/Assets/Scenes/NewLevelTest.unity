@@ -457,26 +457,6 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 705085598}
-    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776564432594220587, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-        type: 3}
-      propertyPath: m_TagString
-      value: Laser
-      objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_Name
@@ -639,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 183845977, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -63.862
+      value: -63.86206
       objectReference: {fileID: 0}
     - target: {fileID: 183845977, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -261,19 +261,6 @@ public class LevelManager : MonoBehaviour
         sphere.GetComponent<playerScript>().ballDropped = true;
     }
 
-    public void loadLevel(string levelName)
-    {
-        try
-        {
-            SceneManager.LoadScene(levelName, LoadSceneMode.Single);
-            Debug.Log("Load Scene " + levelName);
-        }
-        catch
-        {
-            Debug.Log("Level Load Not Valid");
-        }
-    }
-
     public void quitGame()
     {
         Debug.Log("Quitting Game");
