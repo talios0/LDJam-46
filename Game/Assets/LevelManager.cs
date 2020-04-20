@@ -65,6 +65,7 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (level == levels.Length) { currentLevel.transform.Rotate(new Vector3(0, 1, 0), rotateSpeed); return; }
         if (levelComplete)
         {
             if (!delayComplete) {
@@ -92,7 +93,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !levelComplete) LevelCompleteStart();
+        if (level == levels.Length) {
+            if (paused) Resume();
+            return;
+        }
         if (Input.GetAxisRaw("Pause") != 0)
         {
             if (!pausePossible) return;
@@ -109,10 +113,17 @@ public class LevelManager : MonoBehaviour
     public void LevelCompleteStart()
     {
         // Set position back to origin
+        if (level+1 == levels.Length)
+        {
+            GameFinished();
+            level++;
+            return;
+        }
         ResetPositions();
         levelComplete = true;
         panComplete = false;
         pausePossible = false;
+        disableRotation = true;
     }
 
     private void LevelComplete()
@@ -132,10 +143,6 @@ public class LevelManager : MonoBehaviour
         level++;
         UpdateLevelUI();
         levelUIAnimator.Play("NewLevel");
-        if (level > levels.Length)
-        {
-            GameFinished();
-        }
         // Load Next Level
         LoadNextLevel();
         camController.StartPanDown();
@@ -151,6 +158,7 @@ public class LevelManager : MonoBehaviour
         ShowDropButton();
         pausePossible = true;
         delayComplete = false;
+        disableRotation = false;
     }
 
     private void LoadNextLevel()
@@ -226,9 +234,14 @@ public class LevelManager : MonoBehaviour
         dropButton.GetComponent<Button>().enabled = true;
     }
 
+    public Animator gameWinAnimator;
+
     private void GameFinished()
     {
-        // Load new Screen
+        dropButton.SetActive(false);
+        pausePossible = false;
+        disableRotation = true;
+        gameWinAnimator.Play("FadeIn");
     }
 
     public void StartOver()
@@ -263,7 +276,6 @@ public class LevelManager : MonoBehaviour
 
     public void quitGame()
     {
-        Debug.Log("Quitting Game");
         Application.Quit();
     }
     public bool GameLoss()

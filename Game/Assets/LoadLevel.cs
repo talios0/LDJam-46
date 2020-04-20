@@ -26,4 +26,9 @@ public class LoadLevel : MonoBehaviour
             Debug.Log("Level Load Not Valid");
         }
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
