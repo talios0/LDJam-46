@@ -453,10 +453,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 455156427964442053, guid: dd31bf5d4b8756747a5c36791e0f2a34,
+    - target: {fileID: 1285985966, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 705085598}
+    - target: {fileID: 2776564432594220587, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_TagString
+      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
@@ -532,25 +536,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6770603746896462442}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1285985960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 360737979, guid: dd31bf5d4b8756747a5c36791e0f2a34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136720278}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1285985966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285985960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfdb6adfbc564a4419b19cf873955134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelManager: {fileID: 705085598}
 --- !u!1 &1386638466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6770603747498500419, guid: 246b41e1706beef48857b1019322f6bf,

@@ -156,7 +156,6 @@ public class LevelManager : MonoBehaviour
         sphere = newLevel.GetComponentInChildren<SphereCollider>().gameObject;
         sphere.GetComponent<Rigidbody>().isKinematic = true;
         sphere.GetComponent<Rigidbody>().detectCollisions = false;
-        sphere.GetComponent<playerScript>().levelManager = this;
     }
 
     private void ResetPositions()
