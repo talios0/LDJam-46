@@ -1497,7 +1497,7 @@ PrefabInstance:
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.size
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
@@ -1662,43 +1662,43 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[15]
       value: 
-      objectReference: {fileID: 1790472965991751292, guid: 96a6a2c76a431354090345aaf976af78,
+      objectReference: {fileID: 3805530516570294616, guid: a448361690c656d4d8247ae21ec9eb33,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[16]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: a448361690c656d4d8247ae21ec9eb33,
+      objectReference: {fileID: 3805530516570294616, guid: fbe78ac19b4303e40b0f5953077804a8,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[17]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: fbe78ac19b4303e40b0f5953077804a8,
+      objectReference: {fileID: 3805530516570294616, guid: e0c0b83e86dfbb744b39f0bdd6257a5f,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[18]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: e0c0b83e86dfbb744b39f0bdd6257a5f,
+      objectReference: {fileID: 3805530516570294616, guid: f68ec5fc5dd1c5a49a08be962cdbb07f,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[19]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: f68ec5fc5dd1c5a49a08be962cdbb07f,
+      objectReference: {fileID: 3805530516570294616, guid: 1ebadc53204888345b55b4838bc7a449,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[20]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: 1ebadc53204888345b55b4838bc7a449,
+      objectReference: {fileID: 3805530516570294616, guid: 7b93bc72f25405748b7acd60cb5e6c2b,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[21]
       value: 
-      objectReference: {fileID: 3805530516570294616, guid: 7b93bc72f25405748b7acd60cb5e6c2b,
+      objectReference: {fileID: 3805530516570294616, guid: 5fac85cbd6d54c941bd02aeadd97f350,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
@@ -1824,6 +1824,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6770603745573077621, guid: 246b41e1706beef48857b1019322f6bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240549, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
       propertyPath: m_Enabled
@@ -1834,10 +1839,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6770603745691240551, guid: 246b41e1706beef48857b1019322f6bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240570, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6770603745691240571, guid: 246b41e1706beef48857b1019322f6bf,
         type: 3}

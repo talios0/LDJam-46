@@ -115,6 +115,7 @@ public class LevelManager : MonoBehaviour
         // Set position back to origin
         if (level+1 == levels.Length)
         {
+            if (LossCanvas.enabled) return;
             GameFinished();
             level++;
             return;

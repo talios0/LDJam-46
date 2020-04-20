@@ -24,7 +24,6 @@ public class playerScript: MonoBehaviour
     {
         if (other.tag == "Laser")
         {
-            Debug.Log(levelManager.GetLevel());
             // You Lose
             lose = levelManager.GameLoss();
         }
