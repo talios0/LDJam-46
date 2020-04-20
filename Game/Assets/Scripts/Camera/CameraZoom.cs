@@ -6,12 +6,14 @@ public class CameraZoom : MonoBehaviour
 {
     public float maxZoom;
     public float minZoom;
+    public float disableWallsZoom;
 
     public float sensitivity;
     public float interpTime;
     public float snapAmount;
 
     private Vector3 zoomTo;
+
 
     private void FixedUpdate()
     {
@@ -27,5 +29,13 @@ public class CameraZoom : MonoBehaviour
             transform.position = zoomTo;
             zoomTo.z = 0;
         }
+    }
+
+    public bool GetZoomDisable() {
+        if (transform.position.z < disableWallsZoom)
+        {
+            return true;
+        }
+        return false;
     }
 }

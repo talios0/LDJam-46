@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxZoom: 18
   minZoom: -5
+  disableWallsZoom: 3
   sensitivity: 25
   interpTime: 0.5
   snapAmount: 0.25
@@ -500,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.25274488
       objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
@@ -515,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.967533
       objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
@@ -525,7 +526,7 @@ PrefabInstance:
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -29.28
       objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
@@ -1038,13 +1039,13 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[15]
       value: 
-      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
+      objectReference: {fileID: 1790472965991751292, guid: 96a6a2c76a431354090345aaf976af78,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: levels.Array.data[16]
       value: 
-      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
+      objectReference: {fileID: 3805530516570294616, guid: a448361690c656d4d8247ae21ec9eb33,
         type: 3}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}

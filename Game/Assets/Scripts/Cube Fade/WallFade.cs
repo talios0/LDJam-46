@@ -9,48 +9,54 @@ public class WallFade : MonoBehaviour
     public float interpTime;
     public float interpTimeIn;
 
-    private List<int> fadeOutWalls;
-    private List<int> fadedOut;
-
-    private List<int> fadeInWalls;
-    private List<int> fadedIn;
-
     public Material transparentMat;
     public Material opaqueMat;
 
-    private void Start()
+    private CameraZoom zoom;
+
+    private void Awake()
     {
-        fadeOutWalls = new List<int>();
-        fadedOut = new List<int>();
-        fadeInWalls = new List<int>();
-        fadedIn = new List<int>();
+        zoom = Camera.main.GetComponent<CameraZoom>();
     }
 
     private void FixedUpdate()
     {
-        if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
+        if (!zoom.GetZoomDisable())
         {
-            FadeOut(5);
-        }
-        else FadeIn(5);
+            if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
+            {
+                FadeOut(5);
+            }
+            else FadeIn(5);
 
-        if (transform.eulerAngles.y < 330 && transform.eulerAngles.y > 200)
-        {
-            FadeOut(2);
-        }
-        else FadeIn(2);
+            if (transform.eulerAngles.y < 330 && transform.eulerAngles.y > 200)
+            {
+                FadeOut(2);
+            }
+            else FadeIn(2);
 
-        if (transform.eulerAngles.y < 250 && transform.eulerAngles.y > 115)
-        {
-            FadeOut(0);
-        }
-        else FadeIn(0);
+            if (transform.eulerAngles.y < 250 && transform.eulerAngles.y > 115)
+            {
+                FadeOut(0);
+            }
+            else FadeIn(0);
 
-        if ((transform.eulerAngles.y < 152 && transform.eulerAngles.y > 25))
-        {
-            FadeOut(1);
+            if ((transform.eulerAngles.y < 152 && transform.eulerAngles.y > 25))
+            {
+                FadeOut(1);
+            }
+            else FadeIn(1);
+
+            FadeIn(3);
+            FadeIn(4);
         }
-        else FadeIn(1);
+        else
+        {
+            for (int i = 0; i < walls.Length; i++)
+            {
+                FadeOut(i);
+            }
+        }
 
     }
     private void FadeOut(int index)
