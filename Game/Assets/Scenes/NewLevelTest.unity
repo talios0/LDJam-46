@@ -260,7 +260,7 @@ MonoBehaviour:
   minZoom: -6
   disableWallsZoom: 3
   disableTopZoom: 8
-  sensitivity: 2000
+  sensitivity: 2800
   interpTime: 0.8
   snapAmount: 0.25
 --- !u!114 &98528841
