@@ -57,8 +57,7 @@ public class LevelManager : MonoBehaviour
         tutorials = GetComponent<TutorialManager>();
         LossCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         LossCanvas.GetComponent<Canvas>().enabled = false;
-        LevelComplete();
-        ResetPositions();
+        LevelCompleteStart();
         levelUI.text = level.ToString();
         tutorials = GetComponent<TutorialManager>();
     }
@@ -108,8 +107,6 @@ public class LevelManager : MonoBehaviour
 
     public void LevelCompleteStart()
     {
-        // Set position back to origin
-        ResetPositions();
         levelComplete = true;
         panComplete = false;
         pausePossible = false;
@@ -120,8 +117,6 @@ public class LevelManager : MonoBehaviour
         // Check if at end
         if (first)
         {
-            levelComplete = true;
-            panComplete = true;
             LoadNextLevel();
             UpdateLevelUI();
             levelUIAnimator.Play("NewLevel");
@@ -146,6 +141,8 @@ public class LevelManager : MonoBehaviour
         levelComplete = false;
         // Unload Previous
         UnloadLastLevel();
+        // Set position back to origin
+        ResetPositions();
 
         tutorials.ShowTutorial(level);
         ShowDropButton();
@@ -258,7 +255,19 @@ public class LevelManager : MonoBehaviour
         sphere.GetComponent<Rigidbody>().detectCollisions = true;
         dropButtonAnimator.Play("FadeOut");
         dropButton.GetComponent<Button>().interactable = false;
-        sphere.GetComponent<playerScript>().ballDropped = true;
+    }
+
+    public void loadLevel(string levelName)
+    {
+        try
+        {
+            SceneManager.LoadScene(levelName, LoadSceneMode.Single);
+            Debug.Log("Load Scene " + levelName);
+        }
+        catch
+        {
+            Debug.Log("Level Load Not Valid");
+        }
     }
 
     public void quitGame()
@@ -266,21 +275,13 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Quitting Game");
         Application.Quit();
     }
-    public bool GameLoss()
+    public void GameLoss()
     {
-        if (levelComplete) return false;
         LossCanvas.enabled = true;
         LossCanvas.GetComponent<Animator>().Play("FadeIn");
         foreach (GameObject g in gameOverButtons)
         {
             g.GetComponent<Button>().interactable = true;
-            g.GetComponent<Button>().enabled = true;
         }
-        return true;
-    }
-
-    public int GetLevel() 
-    {
-        return level;
     }
 }

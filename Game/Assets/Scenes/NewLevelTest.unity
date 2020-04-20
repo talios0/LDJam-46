@@ -675,7 +675,6 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 705085598}
-<<<<<<< HEAD
     - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -711,8 +710,6 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.w
       value: -1
       objectReference: {fileID: 0}
-=======
->>>>>>> e7c4cc4a4754d006c4564f073c04b62f982d58a1
     - target: {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_Name
@@ -981,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 183845977, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -63.86206
+      value: -63.862
       objectReference: {fileID: 0}
     - target: {fileID: 183845977, guid: 6a4fc13e3bc06cb46a0e68811da0b7cc, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1217,10 +1214,6 @@ PrefabInstance:
       propertyPath: contentText
       value: 
       objectReference: {fileID: 1561662359}
-    - target: {fileID: 1542353164, guid: 0c1274a1c25cdf649ad960372aa958b4, type: 3}
-      propertyPath: tutorials.Array.data[2].content
-      value: Use the SHIFT key to stop the sphere in mid air.
-      objectReference: {fileID: 0}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: newLevelLocation
@@ -1291,24 +1284,6 @@ PrefabInstance:
       propertyPath: delayBeforeNextLevel
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[1]
-      value: 
-      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
-        type: 3}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[2]
-      value: 
-      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
-        type: 3}
-    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
-        type: 3}
-      propertyPath: levels.Array.data[3]
-      value: 
-      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
-        type: 3}
     - target: {fileID: 4047909180362375238, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: m_Name
