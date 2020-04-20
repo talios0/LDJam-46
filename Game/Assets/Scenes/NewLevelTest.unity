@@ -875,6 +875,10 @@ PrefabInstance:
       propertyPath: contentText
       value: 
       objectReference: {fileID: 1561662359}
+    - target: {fileID: 1542353164, guid: 0c1274a1c25cdf649ad960372aa958b4, type: 3}
+      propertyPath: tutorials.Array.data[2].content
+      value: Use the SHIFT key to stop the sphere in mid air.
+      objectReference: {fileID: 0}
     - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: newLevelLocation

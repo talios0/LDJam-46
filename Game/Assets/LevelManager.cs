@@ -258,6 +258,7 @@ public class LevelManager : MonoBehaviour
         sphere.GetComponent<Rigidbody>().detectCollisions = true;
         dropButtonAnimator.Play("FadeOut");
         dropButton.GetComponent<Button>().interactable = false;
+        sphere.GetComponent<playerScript>().ballDropped = true;
     }
 
     public void loadLevel(string levelName)
