@@ -47,8 +47,15 @@ public class WallFade : MonoBehaviour
             }
             else FadeIn(1);
 
-            FadeIn(3);
-            FadeIn(4);
+            if (!zoom.GetTopDisable())
+            {
+                FadeIn(3);
+                FadeIn(4);
+            } else
+            {
+                FadeOut(3);
+                FadeOut(4);
+            }
         }
         else
         {

@@ -39,7 +39,7 @@ public class playerScript: MonoBehaviour
         {
             // You Win
             levelManager.LevelCompleteStart();
-            if (levelManager.GetLevel() + 1 == 5) {
+            if (levelManager.GetLevel() + 1 >= 5) {
                 slowUnlock = true;
             }
         }
