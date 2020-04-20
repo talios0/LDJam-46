@@ -251,12 +251,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walls:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 832541372450513822}
+  - {fileID: 3480078290112241418}
+  - {fileID: 5948349149087087613}
+  - {fileID: 7081175457599047832}
+  - {fileID: 6325554516915295382}
+  - {fileID: 3240462019261197023}
   interpTime: 1
   interpTimeIn: 0.15
   transparentMat: {fileID: 0}
