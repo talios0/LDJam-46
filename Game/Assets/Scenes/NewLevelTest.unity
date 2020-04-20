@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdb6adfbc564a4419b19cf873955134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 705085598}
 --- !u!1 &1386638466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6770603747498500419, guid: 246b41e1706beef48857b1019322f6bf,
