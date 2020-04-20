@@ -10,6 +10,11 @@ using System.Net;
 
 public class LevelManager : MonoBehaviour
 {
+    public float delayBeforeNextLevel;
+    private float delay;
+    public float rotateSpeed;
+    private bool delayComplete = false;
+
     public CameraController camController;
     public static bool disableRotation = false;
 
@@ -59,22 +64,34 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(1)) LevelCompleteStart();
         if (levelComplete)
         {
-            if (panComplete)
+            if (!delayComplete) {
+                currentLevel.transform.Rotate(new Vector3(0, 1, 0), rotateSpeed);
+                delay += Time.deltaTime;
+                if (delay >= delayBeforeNextLevel)
+                {
+                    delay = 0;
+                    delayComplete = true;
+                    LevelComplete();
+                }
+            }
+
+            if (delayComplete && panComplete)
             {
                 panComplete = false;
                 LevelCompleteEnd();
             }
-            else
+            else if (delayComplete && !panComplete)
             {
                 PanCamera();
             }
         }
     }
+
     private void Update()
     {
+        if (Input.GetMouseButtonDown(1) && !levelComplete) LevelCompleteStart();
         if (Input.GetAxisRaw("Pause") != 0)
         {
             if (!pausePossible) return;
@@ -92,6 +109,11 @@ public class LevelManager : MonoBehaviour
     {
         levelComplete = true;
         panComplete = false;
+        pausePossible = false;
+    }
+
+    private void LevelComplete()
+    {
         // Check if at end
         if (first)
         {
@@ -124,6 +146,8 @@ public class LevelManager : MonoBehaviour
 
         tutorials.ShowTutorial(level);
         ShowDropButton();
+        pausePossible = true;
+        delayComplete = false;
     }
 
     private void LoadNextLevel()

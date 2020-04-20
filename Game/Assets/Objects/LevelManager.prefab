@@ -45,11 +45,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f75bb8a36a62be49a839769d9d3e17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBeforeNextLevel: 0
+  rotateSpeed: 0
   camController: {fileID: 525701207}
   LossCanvas: {fileID: 0}
   levels:
   - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
   - {fileID: 945227634632944941, guid: 883c7d757cd36154b975467a4585a16a, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
+  - {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34, type: 3}
   level: 0
   newLevelLocation: {fileID: 0}
   currentLevel: {fileID: 0}
@@ -109,7 +144,7 @@ MonoBehaviour:
   - preface: Did you know?
     content: You can rotate the cube while the sphere is falling.
     level: 10
-  - preface: That was easy!
+  - preface: Too easy!
     content: Now the exit is smaller...
     level: 15
   - preface: 'TIP: '
