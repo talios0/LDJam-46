@@ -457,6 +457,21 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 705085598}
+    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 356648163440417809, guid: dd31bf5d4b8756747a5c36791e0f2a34,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2776564432594220587, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_TagString
@@ -930,6 +945,24 @@ PrefabInstance:
       propertyPath: delayBeforeNextLevel
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
+        type: 3}
+      propertyPath: levels.Array.data[1]
+      value: 
+      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
+        type: 3}
+    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
+        type: 3}
+      propertyPath: levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
+        type: 3}
+    - target: {fileID: 4047909180362375236, guid: 0c1274a1c25cdf649ad960372aa958b4,
+        type: 3}
+      propertyPath: levels.Array.data[3]
+      value: 
+      objectReference: {fileID: 8313378240948240871, guid: 7ce94e8e8c691c84ba087dfe6253d9c1,
+        type: 3}
     - target: {fileID: 4047909180362375238, guid: 0c1274a1c25cdf649ad960372aa958b4,
         type: 3}
       propertyPath: m_Name
