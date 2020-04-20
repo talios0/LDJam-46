@@ -18,13 +18,18 @@ public class CameraZoom : MonoBehaviour
 
     private void Update()
     {
+        if (LevelManager.disableRotation) return;
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             zoomTo = new Vector3(transform.position.x, transform.position.y, transform.position.z + Input.GetAxis("Mouse ScrollWheel") * -sensitivity * Time.deltaTime);
             zoomTo.z = Mathf.Clamp(zoomTo.z, minZoom, maxZoom);
         }
         if (zoomTo.z == 0) return;
-        transform.position = zoomTo;
+        transform.position = Vector3.Lerp(transform.position, zoomTo, interpTime);
+        if (Mathf.Abs(transform.position.z - zoomTo.z) < snapAmount) {
+            transform.position = zoomTo;
+            zoomTo.z = 0;
+        }
     }
 
     public bool GetZoomDisable() {

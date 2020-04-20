@@ -261,7 +261,7 @@ MonoBehaviour:
   disableWallsZoom: 3
   disableTopZoom: 8
   sensitivity: 2000
-  interpTime: 0.5
+  interpTime: 0.8
   snapAmount: 0.25
 --- !u!114 &98528841
 MonoBehaviour:
@@ -378,7 +378,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1306
+  m_Name: pb_Mesh242962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -613,7 +613,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1308
+  m_Name: pb_Mesh242668
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1073,7 +1073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5234
+  m_Name: pb_Mesh242372
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
