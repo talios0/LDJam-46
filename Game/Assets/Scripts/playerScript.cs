@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
-using System.Runtime.CompilerServices;
+﻿using UnityEngine;
 
 public class playerScript: MonoBehaviour
 {
@@ -20,6 +14,10 @@ public class playerScript: MonoBehaviour
     {
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         gravity = Physics.gravity.y;
+        if (levelManager.GetLevel() + 1 >= 5)
+        {
+            slowUnlock = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

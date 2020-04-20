@@ -259,7 +259,7 @@ MonoBehaviour:
   maxZoom: 18
   minZoom: -5
   disableWallsZoom: 3
-  disableTopZoom: 5
+  disableTopZoom: 6.5
   sensitivity: 550
   interpTime: 0.5
   snapAmount: 0.25
@@ -487,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 7720859409648436196, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7720859409648436198, guid: dd31bf5d4b8756747a5c36791e0f2a34,
         type: 3}
