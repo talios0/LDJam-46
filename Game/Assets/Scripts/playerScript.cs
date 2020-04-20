@@ -61,4 +61,9 @@ public class playerScript: MonoBehaviour
             }
         }
     }
+
+
+    public void SetUnlock(bool state) {
+        slowUnlock = state;
+    }
 }

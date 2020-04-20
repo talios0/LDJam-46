@@ -254,6 +254,7 @@ public class LevelManager : MonoBehaviour
                 g.GetComponent<Button>().interactable = false;
             }
         }
+        sphere.GetComponent<playerScript>().SetUnlock(false);
 
         level = -1;
         LevelCompleteStart();
@@ -280,6 +281,8 @@ public class LevelManager : MonoBehaviour
     }
     public bool GameLoss()
     {
+        disableRotation = true;
+        pausePossible = false;
         if (levelComplete) return false;
         LossCanvas.enabled = true;
         LossCanvas.GetComponent<Animator>().Play("FadeIn");
