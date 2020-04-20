@@ -17,7 +17,12 @@ public class playerScript: MonoBehaviour
             // You Lose
             levelManager.GameLoss();
         }
-        else if (other.tag == "WinPlat") {
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "WinPlat")
+        {
             // You Win
             levelManager.LevelCompleteStart();
         }
