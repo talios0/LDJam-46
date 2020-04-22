@@ -186,6 +186,12 @@ public class LevelManager : MonoBehaviour
 
     private void PanCamera()
     {
+        WallFade.collideBack = false;
+        WallFade.collideBottom = false;
+        WallFade.collideFront = true;
+        WallFade.collideLeft = false;
+        WallFade.collideRight = false;
+        WallFade.collideTop = false;
         panComplete = camController.PanDown();
     }
 
