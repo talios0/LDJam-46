@@ -5,19 +5,18 @@ public class RotateCube : MonoBehaviour
     public bool active;
     public float interpTime;
     public float snapAmount;
-    public float sensitivity;
+    private static float sensitivity = 5;
 
     private MouseState clickState;
     private Vector3 rotateTo;
     private Vector3 previousRotation;
 
-    public float rotateSpeed;
+    private static float rotateSpeed = 115;
     private float sensMultiplier;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Confined;
         rotateTo = transform.eulerAngles;
-        rotateSpeed = 1;
     }
 
     private void Awake()
@@ -42,7 +41,7 @@ public class RotateCube : MonoBehaviour
 
     private void KeyboardCube() {
         clickState = MouseState.WAIT;
-        transform.Rotate(new Vector3(-Input.GetAxisRaw("Vertical"), -Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Z")), rotateSpeed);
+        transform.Rotate(new Vector3(-Input.GetAxisRaw("Vertical"), -Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Z")), rotateSpeed*Time.deltaTime);
         rotateTo = transform.eulerAngles;
     }
 

@@ -701,7 +701,7 @@ MonoBehaviour:
   interpTime: 1
   snapAmount: 0.15
   sensitivity: 10
-  rotateSpeed: 1
+  rotateSpeed: 11
 --- !u!114 &1838409476926572593
 MonoBehaviour:
   m_ObjectHideFlags: 0
