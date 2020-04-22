@@ -108,6 +108,7 @@ public class LevelManager : MonoBehaviour
         {
             pausePossible = true;
         }
+        if (dropButton.GetComponent<Button>().interactable && Input.GetAxisRaw("Enter") != 0) Drop();
     }
 
     public void LevelCompleteStart()
@@ -209,6 +210,12 @@ public class LevelManager : MonoBehaviour
         dropButtonAnimator.Play("FadeIn");
         dropButtonAnimator.GetComponent<Button>().enabled = true;
         dropButtonAnimator.GetComponent<Button>().interactable = true;
+        WallFade.collideBack = false;
+        WallFade.collideBottom = false;
+        WallFade.collideFront = true;
+        WallFade.collideLeft = false;
+        WallFade.collideRight = false;
+        WallFade.collideTop = false;
         Resume();
     }
 

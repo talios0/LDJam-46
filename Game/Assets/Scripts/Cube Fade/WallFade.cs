@@ -14,6 +14,13 @@ public class WallFade : MonoBehaviour
 
     private CameraZoom zoom;
 
+    public static bool collideTop;
+    public static bool collideBottom;
+    public static bool collideLeft;
+    public static bool collideRight;
+    public static bool collideBack;
+    public static bool collideFront;
+
     private void Awake()
     {
         zoom = Camera.main.GetComponent<CameraZoom>();
@@ -23,6 +30,18 @@ public class WallFade : MonoBehaviour
     {
         if (!zoom.GetZoomDisable())
         {
+            if (collideLeft) FadeOut(2);
+            else FadeIn(2);
+
+            if (collideRight) FadeOut(1);
+            else FadeIn(1);
+
+            if (collideBack) FadeOut(0);
+            else FadeIn(0);
+
+            if (collideFront) FadeOut(5);
+            else FadeIn(5);
+            /*
             if (transform.rotation.y > -0.55 && transform.rotation.y < 0.55)
             {
                 FadeOut(5);
@@ -46,15 +65,18 @@ public class WallFade : MonoBehaviour
                 FadeOut(1);
             }
             else FadeIn(1);
-
-            if (!zoom.GetTopDisable())
-            {
-                FadeIn(3);
-                FadeIn(4);
-            } else
+            */
+            //Debug.Log(;
+            if (zoom.GetTopDisable())
             {
                 FadeOut(3);
                 FadeOut(4);
+            } else
+            {
+                if (collideTop) FadeOut(3);
+                else FadeIn(3);
+                if (collideBottom) FadeOut(4);
+                else FadeIn(4);
             }
         }
         else
